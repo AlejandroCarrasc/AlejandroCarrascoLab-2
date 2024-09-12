@@ -94,24 +94,36 @@
         </form>
 
         <div class="table-container">
-            <!-- Aquí se incluirá el código para la tabla, por ejemplo: -->
-            <table class="table table-striped">
-                <thead>
-                    <tr>
-                        <th>Placa</th>
-                        <th>Marca</th>
-                        <th>Modelo</th>
-                        <th>Año</th>
-                        <th>Color</th>
-                        <th>Número de Motor</th>
-                        <th>Número de Chasis</th>
-                        <th>Tipo de Vehículo</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- Aquí se llenarán los datos con PHP -->
-                </tbody>
-            </table>
+            <?php if (isset($datosAutomovil) && $datosAutomovil): ?>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Placa</th>
+                            <th>Marca</th>
+                            <th>Modelo</th>
+                            <th>Año</th>
+                            <th>Color</th>
+                            <th>Número de Motor</th>
+                            <th>Número de Chasis</th>
+                            <th>Tipo de Vehículo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><?php echo htmlspecialchars($datosAutomovil['placa']); ?></td>
+                            <td><?php echo htmlspecialchars($datosAutomovil['marca']); ?></td>
+                            <td><?php echo htmlspecialchars($datosAutomovil['modelo']); ?></td>
+                            <td><?php echo htmlspecialchars($datosAutomovil['anio']); ?></td>
+                            <td><?php echo htmlspecialchars($datosAutomovil['color']); ?></td>
+                            <td><?php echo htmlspecialchars($datosAutomovil['num_motor']); ?></td>
+                            <td><?php echo htmlspecialchars($datosAutomovil['num_chasis']); ?></td>
+                            <td><?php echo htmlspecialchars($datosAutomovil['tipo_vehiculo']); ?></td>
+                        </tr>
+                    </tbody>
+                </table>
+            <?php else: ?>
+                <p>No se encontró el automóvil con la placa proporcionada.</p>
+            <?php endif; ?>
         </div>
 
         <div class="btn-container">
