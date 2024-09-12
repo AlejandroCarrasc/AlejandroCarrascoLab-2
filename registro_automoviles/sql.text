@@ -1,0 +1,11 @@
+CREATE TABLE automoviles (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    marca VARCHAR(50) NOT NULL,
+    modelo VARCHAR(50) NOT NULL,
+    anio INT NOT NULL,
+    color VARCHAR(30) NOT NULL,
+    placa VARCHAR(20) NOT NULL,
+    num_motor VARCHAR(50) NOT NULL,
+    num_chasis VARCHAR(50) NOT NULL,
+    tipo_vehiculo VARCHAR(30) NOT NULL
+);
